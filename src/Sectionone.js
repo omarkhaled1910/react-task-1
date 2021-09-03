@@ -3,13 +3,20 @@ import Question from './Question'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 
+
 const Sectionone = () => {
+    //data for sectionone
     const answer1 = ['B2C', 'B2B', 'both']
     const answer2 = ['YES ', 'NO']
     const questions = [' - Is your business model B2C or B2B or both?', ' - Do you target all age brackets?', ' - Do you target all industries?']
+
+
+
     const [answerone, setAnswerone] = React.useState('')
     const [show, setShow] = React.useState({ two: true, three: true })
-    console.log(answerone, show);
+
+
+    // console.log(answerone, show);
 
     React.useEffect(() => {
         if (answerone === 'B2B') {
@@ -33,6 +40,8 @@ const Sectionone = () => {
             <Link to="/sectiontwo"><Button variant="primary" size="lg" active>
                 CONTINUE
             </Button></Link>
+
+
         </>
     )
 }

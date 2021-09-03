@@ -1,5 +1,6 @@
 import React from 'react'
 
+//static form just to display what it gets
 const Question = ({ answer1, answer2, show, setAnswerone, questions }) => {
 
 
@@ -10,9 +11,9 @@ const Question = ({ answer1, answer2, show, setAnswerone, questions }) => {
             <div class=" question">
                 <p>{questions[0]}</p>
                 {answer1?.map((a, i) => (
-                    <div key={i} class="form-check">
-                        <input class="form-check-input" type="radio" value={a} name="answer1" onChange={(e) => setAnswerone(e.target.value)} />
-                        <label class="form-check-label" for="flexCheckDefault">
+                    <div key={i} >
+                        <input type="radio" value={a} name="answer1" onChange={(e) => setAnswerone(e.target.value)} />
+                        <label  >
                             {a}
                         </label>
                     </div>
@@ -22,9 +23,9 @@ const Question = ({ answer1, answer2, show, setAnswerone, questions }) => {
             <div class={show.two ? 'question' : 'no-question'}>
                 <p>{questions[1]}</p>
                 {answer2?.map((a, i) => (
-                    <div key={i} class="form-check">
-                        <input class="form-check-input" type="radio" value={a} name="answer1" onChange={(e) => console.log(e.target.value)} />
-                        <label class="form-check-label" for="flexCheckDefault">
+                    <div key={i} >
+                        <input type="radio" value={a} name="answer2" onChange={(e) => console.log(e.target.value)} />
+                        <label  >
                             {a}
                         </label>
                     </div>
@@ -34,9 +35,9 @@ const Question = ({ answer1, answer2, show, setAnswerone, questions }) => {
             <div class={show.three ? 'question' : 'no-question'}>
                 <p>{questions[2]}</p>
                 {answer2?.map((a, i) => (
-                    <div key={i} class="form-check">
-                        <input class="form-check-input" type="radio" value={a} name="answer1" onChange={(e) => (e) => console.log(e.target.value)} />
-                        <label class="form-check-label" for="flexCheckDefault">
+                    <div key={i} >
+                        <input type="radio" value={a} name="answer3" onChange={(e) => (e) => console.log(e.target.value)} />
+                        <label  >
                             {a}
                         </label>
                     </div>
