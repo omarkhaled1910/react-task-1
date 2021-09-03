@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import InputGroup from 'react-bootstrap/InputGroup'
 import FormControl from 'react-bootstrap/FormControl'
+import Container from 'react-bootstrap/esm/Container'
+import Alert from 'react-bootstrap/Alert'
 
 
 
@@ -17,10 +19,17 @@ const Sectiontwo = () => {
     const [showinput, setShowinput] = React.useState(true)
     const [answerone, setAnswerone] = React.useState('')
     const [money, setMoney] = React.useState(0)
+    const [alert, setAlert] = React.useState(false)
 
     const handleSubmit = () => {
-
+        setAlert(true)
     }
+    React.useEffect(() => {
+        setTimeout(() => {
+            setAlert(false)
+        }, 3000);
+    }, [alert])
+
     React.useEffect(() => {
         if (answerone === 'NO') {
             setShowinput(false)
@@ -32,20 +41,33 @@ const Sectiontwo = () => {
     return (
         <>
 
+            {alert && <div> <Alert variant="success">
+                succefully submited
+            </Alert></div>}
             <h2>• Section(2):</h2>
-            <Question questions={questions} answer1={answer1} show={show} setAnswerone={setAnswerone}></Question>
-            <p>{questions[1]}</p>
-            <InputGroup className={showinput ? 'showinput' : 'greyoutinput'}>
-                <InputGroup.Text>$</InputGroup.Text>
-                <FormControl onChange={(e) => setMoney(e.target.value)} aria-label="Amount (to the nearest dollar)" />
 
-            </InputGroup>
-            <br></br>
-            <Button variant="outline-success" type="submit" onClick={handleSubmit}>submit</Button>
-            <br></br>
-            <Link to="/"> <Button variant="primary" size="sm" active>
-                HOME
-            </Button></Link>
+
+            <Container>
+                <Question questions={questions} answer1={answer1} show={show} setAnswerone={setAnswerone}></Question>
+                <p>{questions[1]}</p>
+                <InputGroup placeholder='amount of money' row size='sm' className={showinput ? 'showinput' : 'greyoutinput'}>
+                    <InputGroup.Text>$</InputGroup.Text>
+                    <FormControl onChange={(e) => setMoney(e.target.value)} aria-label="Amount (to the nearest dollar)" />
+
+                </InputGroup>
+                <br></br>
+                <Button variant="outline-success" type="submit" size='md' onClick={handleSubmit}>submit</Button>
+                <br></br>
+                <br></br>
+
+            </Container>
+
+            <div className="button">
+                <Link to="/"> <Button variant="primary" size="lg" active>
+                    HOME
+                </Button></Link>
+            </div>
+
 
         </>
     )

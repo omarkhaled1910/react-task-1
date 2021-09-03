@@ -20,19 +20,32 @@ code {
   height: 0vh;
 }
 .home{
-  background-color: wheat;
+  
   width: 200px;
   height: 200px;
  text-align: center;
  text-justify: auto;
  justify-content: center;
  position: absolute;
- left: 400px;
- top: 200px;
+ left: 500px;
+ top: 250px;
 }
 .greyoutinput{
 
 }
 .showinput{
-  
+
+}
+h2{
+  color:slategray;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+}
+.button{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }

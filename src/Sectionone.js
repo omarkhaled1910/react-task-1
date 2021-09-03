@@ -2,6 +2,7 @@ import React from 'react'
 import Question from './Question'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/esm/Container'
 
 
 const Sectionone = () => {
@@ -34,12 +35,16 @@ const Sectionone = () => {
     return (
         <>
             <h2>• Section(1):</h2>
-            <Question questions={questions} answer1={answer1} answer2={answer2} show={show} setAnswerone={setAnswerone} > </Question>
+            <Container>
+                <Question questions={questions} answer1={answer1} answer2={answer2} show={show} setAnswerone={setAnswerone} > </Question>
 
 
-            <Link to="/sectiontwo"><Button variant="primary" size="lg" active>
-                CONTINUE
-            </Button></Link>
+                <Link to="/sectiontwo"><Button variant="primary" size="lg" active>
+                    CONTINUE
+                </Button></Link>
+
+            </Container>
+
 
 
         </>

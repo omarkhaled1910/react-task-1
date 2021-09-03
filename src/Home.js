@@ -4,12 +4,16 @@ import Button from 'react-bootstrap/Button'
 
 const Home = () => {
     return (
-        <div className="home">
+        <>
 
-            <Link to="/sectionone">  <Button variant="primary" size="lg" active>
-                generate a buisness plan
-            </Button> </Link>
-        </div>
+            <div className="home">
+                <h2>task - 1</h2>
+                <br></br>
+                <Link to="/sectionone">  <Button variant="primary" size="lg" active>
+                    Generate a buisness plan
+                </Button> </Link>
+            </div>
+        </>
     )
 }
 
