@@ -2,10 +2,10 @@ import React from 'react'
 import Question from './Question'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
-import InputGroup from 'react-bootstrap/InputGroup'
-import FormControl from 'react-bootstrap/FormControl'
 import Container from 'react-bootstrap/esm/Container'
 import Alert from 'react-bootstrap/Alert'
+import InputGroup from 'react-bootstrap/InputGroup'
+import FormControl from 'react-bootstrap/FormControl'
 
 
 
@@ -34,6 +34,9 @@ const Sectiontwo = () => {
         if (answerone === 'NO') {
             setShowinput(false)
         }
+        else {
+            setShowinput(true)
+        }
     }, [answerone])
 
     console.log(answerone, money);
@@ -50,11 +53,19 @@ const Sectiontwo = () => {
             <Container>
                 <Question questions={questions} answer1={answer1} show={show} setAnswerone={setAnswerone}></Question>
                 <p>{questions[1]}</p>
-                <InputGroup placeholder='amount of money' row size='sm' className={showinput ? 'showinput' : 'greyoutinput'}>
+
+                {showinput ? <InputGroup placeholder='amount of money' size='sm' >
                     <InputGroup.Text>$</InputGroup.Text>
                     <FormControl onChange={(e) => setMoney(e.target.value)} aria-label="Amount (to the nearest dollar)" />
 
-                </InputGroup>
+                </InputGroup> : <InputGroup placeholder='amount of money' size='sm' >
+                    <InputGroup.Text>$</InputGroup.Text>
+                    <FormControl disabled onChange={(e) => setMoney(e.target.value)} aria-label="Amount (to the nearest dollar)" />
+
+                </InputGroup>}
+
+
+
                 <br></br>
                 <Button variant="outline-success" type="submit" size='md' onClick={handleSubmit}>submit</Button>
                 <br></br>

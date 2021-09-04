@@ -30,12 +30,7 @@ code {
  left: 500px;
  top: 250px;
 }
-.greyoutinput{
 
-}
-.showinput{
-
-}
 h2{
   color:slategray;
   display: flex;
@@ -49,3 +44,4 @@ h2{
   justify-content: center;
   margin-top: 20px;
 }
+

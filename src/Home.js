@@ -12,6 +12,7 @@ const Home = () => {
                 <Link to="/sectionone">  <Button variant="primary" size="lg" active>
                     Generate a buisness plan
                 </Button> </Link>
+
             </div>
         </>
     )
